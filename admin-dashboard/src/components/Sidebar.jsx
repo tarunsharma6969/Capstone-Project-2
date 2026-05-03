@@ -2,6 +2,11 @@ function Sidebar() {
   const navButton =
     "w-full p-3 rounded-xl hover:bg-slate-800 transition text-left";
 
+  const goToPage = (page) => {
+    window.location.hash = page;
+    window.location.reload();
+  };
+
   return (
     <div className="fixed top-0 left-0 h-screen w-20 md:w-64 bg-slate-900 text-white p-4 border-r border-slate-800 shadow-2xl">
       
@@ -21,7 +26,7 @@ function Sidebar() {
         
         <button
           type="button"
-          onClick={() => (window.location.href = "/")}
+          onClick={() => goToPage("/")}
           className={`${navButton} bg-slate-800 text-cyan-400 font-semibold`}
         >
           Dashboard
@@ -29,7 +34,7 @@ function Sidebar() {
 
         <button
           type="button"
-          onClick={() => (window.location.href = "/users")}
+          onClick={() => goToPage("/users")}
           className={navButton}
         >
           Users
@@ -37,7 +42,7 @@ function Sidebar() {
 
         <button
           type="button"
-          onClick={() => (window.location.href = "/analytics")}
+          onClick={() => goToPage("/analytics")}
           className={navButton}
         >
           Analytics
@@ -45,7 +50,7 @@ function Sidebar() {
 
         <button
           type="button"
-          onClick={() => (window.location.href = "/settings")}
+          onClick={() => goToPage("/settings")}
           className={navButton}
         >
           Settings

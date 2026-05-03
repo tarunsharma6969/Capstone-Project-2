@@ -4,7 +4,7 @@ import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 
 function App() {
-  const path = window.location.pathname;
+  const path = window.location.hash.replace("#", "");
 
   if (path === "/users") return <Users />;
   if (path === "/analytics") return <Analytics />;
